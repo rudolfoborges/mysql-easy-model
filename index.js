@@ -18,26 +18,37 @@ exports.pool = function(){
     return pool;
 };
 
-exports.model = function(table){
+exports.model = function(options){
+    var name, table, ids;
 
-    if(table in models) {
-        return models[table];
+    if(typeof options == 'string'){
+        name = table = options;
+    } else if(typeof options == 'object'){
+        name = options.name;
+        table = options.table;
+        ids = options.ids;
+    }
+
+    if(name in models) {
+        return models[name];
     }
 
     function Model(attrs) {
         this._attrs = attrs;
     }
 
-    var baseModel = model(pool, table);
+    var baseModel = model(pool, table, ids);
 
     Model.find = baseModel.find;
+    Model.findOne = baseModel.findOne;
     Model.query = baseModel.query;
+
 
     Model.prototype.create = baseModel.create;
     Model.prototype.update = baseModel.update;
     Model.prototype.destroy = baseModel.destroy;
 
-    models[table] = Model;
+    models[name] = Model;
 
     return Model;
 };
