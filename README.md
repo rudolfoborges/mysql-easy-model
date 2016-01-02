@@ -38,7 +38,7 @@ var User = mysqlEasyModel.model({
 
 ### Accessing a Model
 
-**Once we define a model, we can access it through the same function. The argument is the name of the your model.**
+**After define a model, we can access it through the same function. The argument is the name of the your model.**
 ```js
 var User = mysqlEasyModel.model('user');
 ```
