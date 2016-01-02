@@ -10,22 +10,27 @@ Or install from git:
 
 ## Usage
 
-`var mysqlEasyModel = require('mysql-easy-model');`
+```js
+var mysqlEasyModel = require('mysql-easy-model');
+```
 
-`mysqlEasyModel.createConnection({
+```js
+mysqlEasyModel.createConnection({
 	connectionLimit : 10,
     host            : 'localhost',
     user            : 'root',
     password		: '',
     database        : 'test'
-});`
+});
+```
 
+```js
 var User = mysqlEasyModel.model({
 	name: 'user',
 	table: 'user',
 	primary: ['id']
 });
-
+```
 
 
 
