@@ -19,14 +19,14 @@ exports.pool = function(){
 };
 
 exports.model = function(options){
-    var name, table, ids;
+    var name, table, primary;
 
     if(typeof options == 'string'){
         name = table = options;
     } else if(typeof options == 'object'){
         name = options.name;
         table = options.table;
-        ids = options.ids;
+        primary = options.primary;
     }
 
     if(name in models) {
@@ -37,7 +37,7 @@ exports.model = function(options){
         this._attrs = attrs;
     }
 
-    var baseModel = model(pool, table, ids);
+    var baseModel = model(pool, table, primary);
 
     Model.find = baseModel.find;
     Model.findOne = baseModel.findOne;

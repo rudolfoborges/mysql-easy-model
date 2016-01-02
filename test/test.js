@@ -13,7 +13,7 @@ mysqlEasyModel.init({
 var User = mysqlEasyModel.model({
 	name: 'user',
 	table: 'user',
-	ids: ['id']
+	primary: ['id']
 });
 
 //Find All
