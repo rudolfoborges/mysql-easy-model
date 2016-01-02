@@ -2,7 +2,7 @@
 
 var mysqlEasyModel = require('../index');
 
-mysqlEasyModel.init({
+mysqlEasyModel.createConnection({
 	connectionLimit : 10,
     host            : 'localhost',
     user            : 'root',
@@ -47,6 +47,16 @@ User.query('select * from user', [], function(err, users){
 var user = new User({name: 'John Smith', email: 'js@gmail.com'});
 user.create(function(err, result){
 	console.log('CREATE:', result);
+});
+
+User.findOne({email: 'js@gmail.com'}, function(err, user){
+	if(user){
+		user.name = 'John Smith';
+
+		user.update(function(err, result){
+			console.log(result);
+		})
+	}
 });
 
 //Find one by email and destroy

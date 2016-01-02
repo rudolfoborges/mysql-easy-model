@@ -10,7 +10,7 @@ var model = require('./lib/model');
 
 var models = {};
 
-exports.init = function(options){
+exports.createConnection = function(options){
     pool = mysql.createPool(options);
 };
 
