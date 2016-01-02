@@ -49,6 +49,7 @@ user.create(function(err, result){
 	console.log('CREATE:', result);
 });
 
+//Find one by email and update
 User.findOne({email: 'js@gmail.com'}, function(err, user){
 	if(user){
 		user.name = 'John Smith';
