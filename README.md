@@ -36,6 +36,13 @@ var User = mysqlEasyModel.model({
 });
 ```
 
+### Accessing a Model
+#### Find all
+```js
+User.find(function(err, users){
+	console.log('FIND 1:', users);
+}
+```
 
 
 
