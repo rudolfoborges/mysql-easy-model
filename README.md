@@ -40,8 +40,22 @@ var User = mysqlEasyModel.model({
 #### Find all
 ```js
 User.find(function(err, users){
-	console.log('FIND 1:', users);
+	console.log(users);
 }
+```
+
+#### Find by id
+```js
+User.find({id: 1}, function(err, users){
+	console.log(users);
+}
+```
+
+#### Find by dynamic query
+```js
+User.query('select * from user where email = ?', ['js@gmail.com'], function(err, users){
+	console.log(users);
+});
 ```
 
 
