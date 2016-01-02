@@ -10,11 +10,12 @@ Or install from git:
 
 ## Usage
 
+### Connecting to MongoDB
+
+First, we need to define a connection.
 ```js
 var mysqlEasyModel = require('mysql-easy-model');
-```
 
-```js
 mysqlEasyModel.createConnection({
 	connectionLimit : 10,
     host            : 'localhost',
@@ -24,6 +25,9 @@ mysqlEasyModel.createConnection({
 });
 ```
 
+### Defining a Model
+
+Models are defined through the options object.
 ```js
 var User = mysqlEasyModel.model({
 	name: 'user',
