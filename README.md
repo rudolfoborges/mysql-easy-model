@@ -29,10 +29,10 @@ mysqlEasyModel.createConnection({
 
 Models are defined through the options object.
 ```js
-var User = mysqlEasyModel.model({
-	name: 'user',
-	table: 'user',
-	primary: ['id']
+var User = mysqlEasyModel.model('user', {
+  table: 'user',
+  fields: ['id', 'name', 'email'],
+  primary: ['id']
 });
 ```
 
