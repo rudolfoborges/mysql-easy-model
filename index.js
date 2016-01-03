@@ -35,7 +35,7 @@ exports.model = function(name, options){
         this._attrs = attrs;
     }
 
-    var baseModel = model(pool, table, fields, primary);
+    var baseModel = model(pool, table, fields, primary || []);
 
     Model.find = baseModel.find;
     Model.findOne = baseModel.findOne;
