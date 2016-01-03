@@ -18,15 +18,13 @@ exports.pool = function(){
     return pool;
 };
 
-exports.model = function(options){
-    var name, table, primary;
+exports.model = function(name, options){
+    var table, primary, fields;
 
-    if(typeof options == 'string'){
-        name = table = options;
-    } else if(typeof options == 'object'){
-        name = options.name;
+    if(typeof options == 'object'){
         table = options.table;
         primary = options.primary;
+        fields = options.fields;
     }
 
     if(name in models) {
@@ -37,16 +35,16 @@ exports.model = function(options){
         this._attrs = attrs;
     }
 
-    var baseModel = model(pool, table, primary);
+    var baseModel = model(pool, table, fields, primary);
 
     Model.find = baseModel.find;
     Model.findOne = baseModel.findOne;
     Model.query = baseModel.query;
 
-
     Model.prototype.create = baseModel.create;
     Model.prototype.update = baseModel.update;
     Model.prototype.destroy = baseModel.destroy;
+    Model.prototype.read = baseModel.read;
 
     models[name] = Model;
 

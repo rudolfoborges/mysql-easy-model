@@ -10,13 +10,13 @@ mysqlEasyModel.createConnection({
     database        : 'test'
 });
 
-var User = mysqlEasyModel.model({
-	name: 'user',
+var User = mysqlEasyModel.model('user', {
 	table: 'user',
+	fields: ['id', 'name', 'email'],
 	primary: ['id']
 });
 
-//Find All
+//Find
 User.find(function(err, users){
 	console.log('FIND 1:', users);
 	var user = users[0];
@@ -28,17 +28,17 @@ User.find(function(err, users){
 	});
 });
 
-//Find by id
+//Find with filter
 User.find({id: 1}, function(err, users){
 	console.log('FIND 2:', users);
 });
 
-//Find by query
+//Find with query
 User.query('select * from user where email = ?', ['contato@rudolfoborges.com.br'], function(err, users){
 	console.log('QUERY 1:', users);
 });
 
-//Find all by query
+//Find all with query
 User.query('select * from user', [], function(err, users){
 	console.log('QUERY 2:', users);
 });
@@ -49,7 +49,7 @@ user.create(function(err, result){
 	console.log('CREATE:', result);
 });
 
-//Find one by email and update
+//Find one and update
 User.findOne({email: 'js@gmail.com'}, function(err, user){
 	if(user){
 		user.name = 'John Smith';
@@ -60,9 +60,18 @@ User.findOne({email: 'js@gmail.com'}, function(err, user){
 	}
 });
 
-//Find one by email and destroy
+//Find one and destroy
 User.findOne({email: 'js@gmail.com'}, function(err, user){
 	if(user) user.destroy(function(err, result){
 		console.log('DESTROY:', result);
 	});
 });
+
+//Read model
+var user = new User();
+user.id = 1;
+user.read(function(err){
+	console.log(err);
+	if(!err) console.log(user.name);
+});
+

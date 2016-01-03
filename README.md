@@ -57,6 +57,16 @@ User.find({id: 1}, function(err, users){
 }
 ```
 
+### Read a model
+```js
+var user = new User();
+user.id = 1;
+user.read(function(err){
+  console.log(err);
+  if(!err) console.log(user.name);
+});
+```
+
 #### Find with dynamic query
 ```js
 User.query('select * from user where email = ?', ['js@gmail.com'], function(err, users){
