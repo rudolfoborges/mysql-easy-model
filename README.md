@@ -27,7 +27,7 @@ mysqlEasyModel.createConnection({
 
 ### Defining a Model
 
-Models are defined through the options object.
+Models are defined through the name and options object. `var User = mysqlEasyModel.model(name, options)`
 ```js
 var User = mysqlEasyModel.model('user', {
   table: 'user',
