@@ -21,7 +21,7 @@ exports.pool = function(){
 exports.model = function(name, options){
     var table, primary, fields;
 
-    if(typeof options == 'object'){
+    if(options && typeof options == 'object'){
         table = options.table;
         primary = options.primary;
         fields = options.fields;
