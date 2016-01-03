@@ -43,28 +43,28 @@ var User = mysqlEasyModel.model({
 var User = mysqlEasyModel.model('user');
 ```
 
-#### Find all
+#### Find
 ```js
 User.find(function(err, users){
 	console.log(users);
 }
 ```
 
-#### Find by id
+#### Find with filter
 ```js
 User.find({id: 1}, function(err, users){
 	console.log(users);
 }
 ```
 
-#### Find by dynamic query
+#### Find with dynamic query
 ```js
 User.query('select * from user where email = ?', ['js@gmail.com'], function(err, users){
 	console.log(users);
 });
 ```
 
-#### Create a new User
+#### Create a new Model
 ```js
 var user = new User({name: 'John Smith', email: 'js@gmail.com'});
 user.create(function(err, result){
@@ -72,7 +72,7 @@ user.create(function(err, result){
 });
 ```
 
-#### Find one by email and update
+#### Find one and update
 ```js
 User.findOne({email: 'js@gmail.com'}, function(err, user){
 	if(user){
@@ -87,7 +87,7 @@ User.findOne({email: 'js@gmail.com'}, function(err, user){
 ```
 
 
-#### Find one by email and destroy
+#### Find one and destroy
 ```js
 User.findOne({email: 'js@gmail.com'}, function(err, user){
 	if(user) user.destroy(function(err, result){
