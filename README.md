@@ -113,7 +113,7 @@ Contains runnable sample mysql-easy-model programs.
 
 ### Bugs
 
-`Please, create a new issues in: https://github.com/rudolfoborges/mysql-easy-model/issues`
+Please, create a new issues in: https://github.com/rudolfoborges/mysql-easy-model/issues
 
 ### License
 
