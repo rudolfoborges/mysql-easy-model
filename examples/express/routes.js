@@ -28,9 +28,9 @@ exports.create = function(req, res, next){
 
 exports.update = function(req, res, next){
 	var body = req.body;
-	var user = new User();
 	user.id = req.params.id;
 
+	var user = new User();
 	user.read(function(err){
 		user.name = body.name;
 		user.email = body.email;
