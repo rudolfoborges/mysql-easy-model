@@ -55,7 +55,7 @@ User.findOne({email: 'js@gmail.com'}, function(err, user){
 		user.name = 'John Smith';
 
 		user.update(function(err, result){
-			console.log(result);
+			console.log('UPDATE', result);
 		})
 	}
 });
@@ -71,7 +71,6 @@ User.findOne({email: 'js@gmail.com'}, function(err, user){
 var user = new User();
 user.id = 1;
 user.read(function(err){
-	console.log(err);
 	if(!err) console.log(user.name);
 });
 
