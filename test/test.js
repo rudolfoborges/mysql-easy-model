@@ -16,6 +16,7 @@ var User = mysqlEasyModel.model('user', {
 	primary: ['id']
 });
 
+/*
 //Find
 User.find(function(err, users){
 	console.log('FIND 1:', users);
@@ -67,10 +68,41 @@ User.findOne({email: 'js@gmail.com'}, function(err, user){
 	});
 });
 
+
 //Read model
 var user = new User();
 user.id = 1;
 user.read(function(err){
 	if(!err) console.log(user.name);
 });
+
+var user = new User({id: 4, name: 'John Smith'});
+user.update(function(err, result){
+	console.log('ERR', err);
+	console.log('RESULT', result);
+	console.log('USER', user);
+});
+
+var user = new User();
+user.id = 4;
+user.name = 'John Smith';
+user.update(function(err, result){
+	console.log('ERR', err);
+	console.log('RESULT', result);
+	console.log('USER', user);
+}); */
+
+
+var user = new User({id: 5});
+user.destroy(function(err, result){
+	console.log(user, result, err);
+});
+
+var user = new User();
+user.id = 9;
+user.destroy(function(err, result){
+	console.log(user, result, err);
+});
+
+
 

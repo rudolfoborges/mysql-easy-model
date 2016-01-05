@@ -46,14 +46,14 @@ var User = mysqlEasyModel.model('user');
 #### Find
 ```js
 User.find(function(err, users){
-	console.log(users);
+	if(!err) console.log(users);
 }
 ```
 
 #### Find with filter
 ```js
 User.find({id: 1}, function(err, users){
-	console.log(users);
+	if(!err) console.log(users);
 }
 ```
 
@@ -70,7 +70,7 @@ user.read(function(err){
 #### Find with dynamic query
 ```js
 User.query('select * from user where email = ?', ['js@gmail.com'], function(err, users){
-	console.log(users);
+	if(!err) console.log(users);
 });
 ```
 
@@ -78,7 +78,7 @@ User.query('select * from user where email = ?', ['js@gmail.com'], function(err,
 ```js
 var user = new User({name: 'John Smith', email: 'js@gmail.com'});
 user.create(function(err, result){
-	console.log('created');
+	if(!err) console.log('created');
 });
 ```
 
@@ -90,9 +90,28 @@ User.findOne({email: 'js@gmail.com'}, function(err, user){
 		user.name = 'John Smith';
 
 		user.update(function(err, result){
-			console.log('updated');
+			if(!err) console.log('updated');
 		})
 	}
+});
+```
+
+#### Immediate update - Update without find
+```js
+var user = new User({id: 1, name: 'John Smith'});
+user.update(function(err, result){
+	if(!err) console.log('updated');
+});
+```
+
+OR
+
+```js
+var user = new User();
+user.id = 1;
+user.name = 'John Smith';
+user.update(function(err, result){
+	if(!err) console.log('updated');
 });
 ```
 
@@ -101,8 +120,26 @@ User.findOne({email: 'js@gmail.com'}, function(err, user){
 ```js
 User.findOne({email: 'js@gmail.com'}, function(err, user){
 	if(user) user.destroy(function(err, result){
-		console.log('removed');
+		if(!err) console.log('removed');
 	});
+});
+```
+
+#### Immediate destroy - Destroy without find
+```js
+var user = new User({id: 1});
+user.destroy(function(err, result){
+	if(!err) console.log('removed');
+});
+```
+
+OR
+
+```js
+var user = new User();
+user.id = 1;
+user.destroy(function(err, result){
+	if(!err) console.log('removed');
 });
 ```
 
