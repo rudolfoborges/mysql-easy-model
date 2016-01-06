@@ -4,6 +4,8 @@ var express = require('express');
 var fs = require('fs');
 var path = require('path');
 var bodyParser = require('body-parser');
+
+//change to var mysqlEasyModel = require('mysql-easy-model');
 var mysqlEasyModel = require('../../index');
 
 mysqlEasyModel.createConnection({
