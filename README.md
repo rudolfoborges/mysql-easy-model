@@ -96,7 +96,7 @@ User.findOne({email: 'js@gmail.com'}, function(err, user){
 });
 ```
 
-#### Immediate update - Update without find
+#### Update without find
 ```js
 var user = new User({id: 1, name: 'John Smith'});
 user.update(function(err, result){
@@ -125,7 +125,7 @@ User.findOne({email: 'js@gmail.com'}, function(err, user){
 });
 ```
 
-#### Immediate destroy - Destroy without find
+#### Destroy without find
 ```js
 var user = new User({id: 1});
 user.destroy(function(err, result){
