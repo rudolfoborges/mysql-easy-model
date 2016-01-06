@@ -1,5 +1,6 @@
 'user strict';
 
+//change to var User = require('mysql-easy-model').model('user');
 var User = require('../../index').model('user');
 
 exports.findAll = function(req, res, next){
