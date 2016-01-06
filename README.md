@@ -146,7 +146,7 @@ user.destroy(function(err, result){
 ### Examples
 Contains runnable sample mysql-easy-model programs.
 
-* Using express: https://github.com/rudolfoborges/mysql-easy-model/tree/master/examples/express
+* [Using express](https://github.com/rudolfoborges/mysql-easy-model/tree/master/examples/express)
 
 ### Bugs
 

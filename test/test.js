@@ -16,7 +16,7 @@ var User = mysqlEasyModel.model('user', {
 	primary: ['id']
 });
 
-/*
+
 //Find
 User.find(function(err, users){
 	console.log('FIND 1:', users);
@@ -90,7 +90,7 @@ user.update(function(err, result){
 	console.log('ERR', err);
 	console.log('RESULT', result);
 	console.log('USER', user);
-}); */
+});
 
 
 var user = new User({id: 5});
