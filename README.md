@@ -45,7 +45,7 @@ var User = mysqlEasyModel.model('user');
 
 #### Find
 
-`Model.find(selector, callback) Selector and callback are optional.` 
+Model.find(selector, callback) Selector and callback are optional.
 
 ```js
 User.find(function(err, users){
@@ -55,8 +55,7 @@ User.find(function(err, users){
 
 #### Find with filter
 
-`Model.find(selector, callback) 
-* Selector and callback are optional.` 
+Model.find(selector, callback) Selector and callback are optional.
 
 ```js
 User.find({id: 1}, function(err, users){
@@ -66,8 +65,7 @@ User.find({id: 1}, function(err, users){
 
 ### Read a model
 
-`model.load(callback)
-* Callback is optional.` 
+model.load(callback) Callback is optional.
 
 ```js
 var user = new User();
@@ -79,6 +77,9 @@ user.read(function(err){
 ```
 
 #### Find with dynamic query
+
+Model.query(sql, params, callback)
+
 ```js
 User.query('select * from user where email = ?', ['js@gmail.com'], function(err, users){
 	if(!err) console.log(users);
@@ -86,6 +87,7 @@ User.query('select * from user where email = ?', ['js@gmail.com'], function(err,
 ```
 
 #### Create a new Model
+
 ```js
 var user = new User({name: 'John Smith', email: 'js@gmail.com'});
 user.create(function(err, result){
@@ -94,6 +96,7 @@ user.create(function(err, result){
 ```
 
 #### Find one and update
+
 ```js
 User.findOne({email: 'js@gmail.com'}, function(err, user){
 	if(user){
@@ -108,7 +111,9 @@ User.findOne({email: 'js@gmail.com'}, function(err, user){
 ```
 
 #### Update without find
+
 You can set the primary key value and update without finding.
+
 ```js
 var user = new User({id: 1, name: 'John Smith'});
 user.update(function(err, result){
@@ -129,7 +134,7 @@ user.update(function(err, result){
 
 
 #### Find one and destroy
-You can set the primary key value and delete without finding.
+
 ```js
 User.findOne({email: 'js@gmail.com'}, function(err, user){
 	if(user) user.destroy(function(err, result){
@@ -139,6 +144,9 @@ User.findOne({email: 'js@gmail.com'}, function(err, user){
 ```
 
 #### Destroy without find
+
+You can set the primary key value and delete without finding
+
 ```js
 var user = new User({id: 1});
 user.destroy(function(err, result){
