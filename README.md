@@ -121,7 +121,7 @@ user.update(function(err, result){
 });
 ```
 
-OR
+or
 
 ```js
 var user = new User();
@@ -154,7 +154,7 @@ user.destroy(function(err, result){
 });
 ```
 
-OR
+or
 
 ```js
 var user = new User();
