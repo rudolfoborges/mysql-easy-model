@@ -44,6 +44,10 @@ var User = mysqlEasyModel.model('user');
 ```
 
 #### Find
+
+`Model.find(selector, callback) 
+* Selector and callback are optional.` 
+
 ```js
 User.find(function(err, users){
 	if(!err) console.log(users);
@@ -51,6 +55,10 @@ User.find(function(err, users){
 ```
 
 #### Find with filter
+
+`Model.find(selector, callback) 
+* Selector and callback are optional.` 
+
 ```js
 User.find({id: 1}, function(err, users){
 	if(!err) console.log(users);
@@ -58,6 +66,10 @@ User.find({id: 1}, function(err, users){
 ```
 
 ### Read a model
+
+`model.load(callback)
+* Callback is optional.` 
+
 ```js
 var user = new User();
 user.id = 1;
@@ -97,6 +109,7 @@ User.findOne({email: 'js@gmail.com'}, function(err, user){
 ```
 
 #### Update without find
+You can set the primary key value and update without finding.
 ```js
 var user = new User({id: 1, name: 'John Smith'});
 user.update(function(err, result){
@@ -117,6 +130,7 @@ user.update(function(err, result){
 
 
 #### Find one and destroy
+You can set the primary key value and delete without finding.
 ```js
 User.findOne({email: 'js@gmail.com'}, function(err, user){
 	if(user) user.destroy(function(err, result){
