@@ -45,8 +45,7 @@ var User = mysqlEasyModel.model('user');
 
 #### Find
 
-`Model.find(selector, callback) 
-* Selector and callback are optional.` 
+`Model.find(selector, callback) Selector and callback are optional.` 
 
 ```js
 User.find(function(err, users){
