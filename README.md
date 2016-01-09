@@ -175,10 +175,10 @@ If you'd like to leave feedback, please [open an issue on GitHub.](https://githu
 
 ### License
 
-mysql-easy-model is released under [MIT license](http://opensource.org/licenses/mit-license.php).
+mysql-easy-model is released under [MIT license.](http://opensource.org/licenses/mit-license.php)
 
 ### Credits                             
-mysql-easy-model was created by [Rudolfo Borges](http://rudolfoborges.com.br).
+mysql-easy-model was created by [Rudolfo Borges.](http://rudolfoborges.com.br)
 
 
 
