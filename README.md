@@ -10,7 +10,7 @@ Or install from git:
 
 ## Usage
 
-### Connecting to MongoDB
+### Connecting to MySQL
 
 First, we need to define a connection.
 ```js
